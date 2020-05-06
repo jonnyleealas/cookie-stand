@@ -9,7 +9,7 @@ function StoreLocation(city,minCus,maxCus, aveCookie){
   this.cookiesSold = [];
   this.aveCookie = aveCookie;
   this.hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','Total'];
-};
+}
 
 StoreLocation.prototype.cookieMath = function(){
   //console.log("we are here" , this.cookiesSold)
@@ -22,7 +22,7 @@ StoreLocation.prototype.render = function(){
 };
 
 
-  // "seattle": city, mincus, maxCus, cookies, aveCookie, hours, cookieMath(), render()
+// "seattle": city, mincus, maxCus, cookies, aveCookie, hours, cookieMath(), render()
 // the cities and their parameters
 var seattle = new StoreLocation('seattle', 23, 65, 6.3);
 
@@ -94,7 +94,6 @@ function render(hours,cookies,city){
   var parent= document.getElementById('test');
   var tableRow = document.createElement('tr');
   var tableRowTwo = document.createElement('tr');
-  
   var cityCell = document.createElement('td');
   cityCell.textContent = city;
   tableRow.appendChild(cityCell);
@@ -118,7 +117,7 @@ function render(hours,cookies,city){
 
     tableRowTwo.appendChild(salmonCookies);
 
-}
+  }
 
   parent.appendChild(tableRow);
   parent.appendChild(tableRowTwo);

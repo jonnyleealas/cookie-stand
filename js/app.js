@@ -1,7 +1,7 @@
 'use strict';
 
 
-// this is my new store constroctor 
+// this is my new store constroctor
 function StoreLocation(city,minCus,maxCus, aveCookie){
   this.city = city;
   this.minCus = minCus;
@@ -107,6 +107,8 @@ function render(hours,cookies,city){
     tableRow.appendChild(timeCell);
   }
 
+
+  //this gives me numbers in the table
   for (var j=-1; j < cookies.length; j++){
     var salmonCookies = document.createElement('td');
     if (j === -1) {

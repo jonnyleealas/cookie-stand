@@ -4,6 +4,9 @@ table{
     background-color: ;
     border-collapse:collapse;
 }
+body{
+    background-color: azure;
+}
 
 td{
     border: 1px solid black;

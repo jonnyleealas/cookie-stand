@@ -25,19 +25,14 @@ StoreLocation.prototype.render = function(){
 // this has to be before var of cities
 var arrayCities = [];
 
-// "seattle": city, mincus, maxCus, cookies, aveCookie, hours, cookieMath(), render()
+
 // the cities and their parameters
-
 var tokyo = new StoreLocation('Tokyo', 3, 24, 1.2 );
-
 var dubai = new StoreLocation('Dubai', 11, 38, 3.7);
-
-
 var paris = new StoreLocation('Paris', 20, 38, 2.3);
 var lima = new StoreLocation('Lima', 2, 16, 4.6);
 var seattle = new StoreLocation('Seattle', 23, 65, 6.3);
 
-//an array of the cities arrays
 // console.log(arrayCities);
 renderTime(arrayCities[4].hours);
 for (var i = 0; i < arrayCities.length; i++) {
@@ -59,8 +54,6 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
 }
 
-//var cities= [seattle, tokyo, dubai, paris, lima];
-
 
 // var hours = [1,2,3,5,6,7,8,9,10,11,12,13,14];
 //Random customers per hours with a for loop 
@@ -78,7 +71,7 @@ function cookiePerHour(arrayX,arrayY,perHour,min,max){
 // this is my addition calculator
 function sum(a, b) { //eslint-disable-line
   var add = a + b;
- return add;
+  return add;
 }
 
 // this adds arrays
@@ -108,7 +101,6 @@ function renderTime (timeHours){
 
 }
 
-
 //function for render
 function render(hours,cookies,city){
   // table => table row => td (cell)
@@ -118,43 +110,16 @@ function render(hours,cookies,city){
   cityCell.textContent = city;
   tableRowTwo.appendChild(cityCell);
 
-
-  // // this gives me the hours in a loop for the table row
-  // for( var i= 0; i < hours.length; i++){
-  //   var timeCell = document.createElement('th');
-  //   timeCell.textContent=(`${hours[i]}`);
-  //   tableRow.appendChild(timeCell);
-  // }
-
-
   //this gives me the numger of cookies in the table with one empty cell to align numbers.
   for (var j=0; j < cookies.length; j++){
     var salmonCookies = document.createElement('td');
-    // if (j === ) {
-    //   salmonCookies.textContent = '';
-    // } else {
     salmonCookies.textContent = (`${cookies[j]}`);
-    // }
-
     tableRowTwo.appendChild(salmonCookies);
 
   }
 
-
-  parent.appendChild(tableRowTwo);
-  // var cityName= document.createElement('h2');
-  // cityName.textContent= city;
-  // parent.appendChild(cityName);
-  // for( var i= 0; i < hours.length; i++){
-  //   var listItem= document.createElement('li');
-  //   listItem.textContent=(`${hours[i]}: ${cookies[i]}`);
-  //   parent.appendChild(listItem);
-  // }
-
-
-
+ parent.appendChild(tableRowTwo);
 }
-
 
 // this below is how you connect forms to java
 document.getElementById('pizzapoop').addEventListener('submit',formSubmit);
@@ -168,12 +133,9 @@ function formSubmit(event){
   arrayCities[arrayCities.length-1].cookieMath();
   //this will return a number bigger than the last thing
   arrayCities[arrayCities.length-1].render();
-  }
+}
 
 
 
-// var listenToMe= document.getElementById.pizzapoop;
-
-// listenToMe.addEventListener2('event', handleSubmit);
 
 

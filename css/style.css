@@ -1,0 +1,88 @@
+table{
+    border: 1px solid black;
+    text-align: left;
+    background-color: ;
+    border-collapse:collapse;
+}
+h1{
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size:2em;
+}
+h2{
+    font-family: 'Shadows Into Light', cursive;
+}
+.storyp{
+   font-family:  'Noto Sans JP', sans-serif;
+   background-color: rgb(204, 127, 181);
+}
+
+#index{
+ background-image: url(../img/clock-unsplash.jpg);
+    
+
+}
+
+td{
+    border: 1px solid black;
+    text-align: left;
+    background-color: ;
+    
+  
+}  
+#familypic{
+    
+  
+}
+#navbar{
+    font-size: larger;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: rgb(17, 15, 17);
+
+}
+/* button:hover{
+    
+} */
+    
+.button:hover{
+    transition: ease-in 3000ms ;
+    background-color: red;
+    transform: translateY(-1000px);
+    transform: scale(10,10);
+
+}
+.contactbackground{
+   background-color: darksalmon;
+}
+
+#store{
+    background-image: url(../img/clock-unsplash.jpg);
+}
+#sales{
+    background-color: powderblue;
+
+
+}
+.storepics{
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    color: slateblue;
+}
+.email{
+    
+       
+       
+        text-align: center;
+    }
+
+    #test{
+border: 2em;
+border-color: red;
+       
+    }
+ .contactbackground{
+     text-align: center;
+ }

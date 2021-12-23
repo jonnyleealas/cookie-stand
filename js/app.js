@@ -1,33 +1,33 @@
 'use strict';
 
 
-// this is my new store constroctor
-function StoreLocation(city,minCus,maxCus, aveCookie){
+// this is my new store constructor
+function StoreLocation(city, minCus, maxCus, aveCookie) {
   this.city = city;
   this.minCus = minCus;
   this.maxCus = maxCus;
   this.cookiesSold = [];
   this.aveCookie = aveCookie;
-  this.hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','Total'];
+  this.hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', 'Total'];
   //this means everything inside of contructor
   arrayCities.push(this);
 }
 
-StoreLocation.prototype.cookieMath = function(){
+StoreLocation.prototype.cookieMath = function () {
   //console.log("we are here" , this.cookiesSold)
-  cookiePerHour(this.cookiesSold,this.hours,this.aveCookie,this.minCus,this.maxCus);
+  cookiePerHour(this.cookiesSold, this.hours, this.aveCookie, this.minCus, this.maxCus);
   addAnyArray(this.cookiesSold);
 };
 
-StoreLocation.prototype.render = function(){
-  render(this.hours,this.cookiesSold,this.city);
+StoreLocation.prototype.render = function () {
+  render(this.hours, this.cookiesSold, this.city);
 };
 // this has to be before var of cities
 var arrayCities = [];
 
 
 // the cities and their parameters
-var tokyo = new StoreLocation('Tokyo', 3, 24, 1.2 );
+var tokyo = new StoreLocation('Tokyo', 3, 24, 1.2);
 var dubai = new StoreLocation('Dubai', 11, 38, 3.7);
 var paris = new StoreLocation('Paris', 20, 38, 2.3);
 var lima = new StoreLocation('Lima', 2, 16, 4.6);
@@ -43,8 +43,8 @@ for (var i = 0; i < arrayCities.length; i++) {
 }
 
 // this is  my multiply function
-function multiply(a,b){
-  return[a*b];
+function multiply(a, b) {
+  return [a * b];
 }
 
 //this is my random number calculator
@@ -57,11 +57,11 @@ function getRandomIntInclusive(min, max) {
 
 // var hours = [1,2,3,5,6,7,8,9,10,11,12,13,14];
 //Random customers per hours with a for loop 
-function cookiePerHour(arrayX,arrayY,perHour,min,max){
-  for (var i=0; i < arrayY.length-1; i++){
-    var randomNum= getRandomIntInclusive(min,max);
-    randomNum= multiply(randomNum,perHour);
-    randomNum= Math.ceil(randomNum);
+function cookiePerHour(arrayX, arrayY, perHour, min, max) {
+  for (var i = 0; i < arrayY.length - 1; i++) {
+    var randomNum = getRandomIntInclusive(min, max);
+    randomNum = multiply(randomNum, perHour);
+    randomNum = Math.ceil(randomNum);
     arrayX.push(randomNum);
 
 
@@ -75,22 +75,22 @@ function sum(a, b) { //eslint-disable-line
 }
 
 // this adds arrays
-function addAnyArray(poop){
-  var product= 0;
-  for(var i= 0; i < poop.length; i++){
-    product = sum(poop[i],product);
+function addAnyArray(poop) {
+  var product = 0;
+  for (var i = 0; i < poop.length; i++) {
+    product = sum(poop[i], product);
   }
   poop.push(product);
 }
 
-function renderTime (timeHours){
+function renderTime(timeHours) {
   var parent = document.getElementById('test');
   var tableRow = document.createElement('tr');
   var th = document.createElement('th');
   //cant append a string
   tableRow.appendChild(th);
   // tableRow = document.createElement('tr');
-  for(var i=0; i < timeHours.length; i++){
+  for (var i = 0; i < timeHours.length; i++) {
     // this creates a th for each i
     th = document.createElement('th');
     th.textContent = timeHours[i];
@@ -102,37 +102,37 @@ function renderTime (timeHours){
 }
 
 //function for render
-function render(hours,cookies,city){
+function render(hours, cookies, city) {
   // table => table row => td (cell)
-  var parent= document.getElementById('test');
+  var parent = document.getElementById('test');
   var tableRowTwo = document.createElement('tr');
   var cityCell = document.createElement('th');
   cityCell.textContent = city;
   tableRowTwo.appendChild(cityCell);
 
   //this gives me the numger of cookies in the table with one empty cell to align numbers.
-  for (var j=0; j < cookies.length; j++){
+  for (var j = 0; j < cookies.length; j++) {
     var salmonCookies = document.createElement('td');
     salmonCookies.textContent = (`${cookies[j]}`);
     tableRowTwo.appendChild(salmonCookies);
 
   }
 
- parent.appendChild(tableRowTwo);
+  parent.appendChild(tableRowTwo);
 }
 
 // this below is how you connect forms to java
-document.getElementById('pizzapoop').addEventListener('submit',formSubmit);
-function formSubmit(event){
+document.getElementById('pizzapoop').addEventListener('submit', formSubmit);
+function formSubmit(event) {
   event.preventDefault();
   var city = event.target.city.value;
   var min = Number(event.target.min.value);
   var max = Number(event.target.max.value);
   var ave = Number(event.target.ave.value);
-  new StoreLocation (city,min,max,ave);
-  arrayCities[arrayCities.length-1].cookieMath();
+  new StoreLocation(city, min, max, ave);
+  arrayCities[arrayCities.length - 1].cookieMath();
   //this will return a number bigger than the last thing
-  arrayCities[arrayCities.length-1].render();
+  arrayCities[arrayCities.length - 1].render();
 }
 
 
